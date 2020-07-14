@@ -1,0 +1,21 @@
+[package]
+name = "www-gm-lang-org"
+version = "0.1.0"
+authors = ["GiacomoZheng <giacomo821@outlook.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+lazy_static = "1.4"
+rocket = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+sass-rs = "0.2"
+# handlebars = "3.2"
+# handlebars-fluent = "0.3.0"
+# fluent-bundle = "0.12.0"
+
+[dependencies.rocket_contrib]
+version = "0.4"
+default-features = false
+features = ["handlebars_templates"]
