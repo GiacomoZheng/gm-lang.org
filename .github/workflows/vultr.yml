@@ -7,9 +7,17 @@ on:
 
 jobs:
   vultr:
-    runs-on: ubuntu-16.04
+    runs-on: debian-10
     steps:
       - uses: actions/checkout@v2
-      - uses: helaili/jekyll-action@2.0.1
+      # - uses: helaili/jekyll-action@2.0.1
+      #   env:
+      #     JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+      - uses: easingthemes/ssh-deploy@v2.1.4
         env:
-          JEKYLL_PAT: ${{ secrets.JEKYLL_PAT }}
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          REMOTE_HOST: gm-lang.org
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+          TARGET: ${{ secrets.TARGET }}
+          SOURCE: _site/
