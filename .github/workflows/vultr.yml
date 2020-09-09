@@ -16,7 +16,7 @@ jobs:
       - uses: easingthemes/ssh-deploy@v2.1.4
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          REMOTE_HOST: 149.28.86.151 # gm-lang.org
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }} # gm-lang.org
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           TARGET: ${{ secrets.TARGET }}
