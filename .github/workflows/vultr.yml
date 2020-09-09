@@ -1,4 +1,4 @@
-name: Build and deploy Jekyll site to GitHub Pages
+name: Build and deploy Jekyll site to gm-lang.org
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   vultr:
-    runs-on: debian-10
+    runs-on: debian-lastest
     steps:
       - uses: actions/checkout@v2
       # - uses: helaili/jekyll-action@2.0.1
